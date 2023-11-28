@@ -7,6 +7,9 @@ import os
 import env
 
 def check_file_exists(filename, query, url):
+    ''' 
+    This checks if a file does exist or not from directory, if not it read from mySQL
+    '''
     if os.path.exists(filename):
         print('this file exists, reading from csv file')
     else:
@@ -18,6 +21,9 @@ def check_file_exists(filename, query, url):
 
 # caching titanic_db
 def get_titanic_db():
+    '''
+    This function will check if create the create titanic_db information 
+    '''
     url = env.get_db_url('titanic_db')
     query = 'SELECT * FROM passengers'
     
@@ -29,6 +35,9 @@ def get_titanic_db():
 
 # caching iris_db
 def get_iris_db():
+    '''
+    This function will check if create the create iris_db information 
+    '''
     url = env.get_db_url('iris_db')
     
     query = '''SELECT *
@@ -44,6 +53,9 @@ def get_iris_db():
 
 # caching telco_db
 def get_telco_db():
+    '''
+    This function will check if create the create telco_db information 
+    '''
     url = env.get_db_url('telco_churn')
     
     query = '''SELECT * 

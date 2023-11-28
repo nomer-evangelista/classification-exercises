@@ -1,6 +1,17 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+import seaborn as sns
+import os
+from sklearn.model_selection import train_test_split
+from pydataset import data
+import prepare
+
 def prep_iris(iris_db):
     '''
     This function will be cleaning untransformed iris data into a clean iris data
+    can use acquire.get_iris_db() to get fresh dataframe
     '''
     
     # dropping columns = species_id and measurement_id
@@ -29,6 +40,7 @@ def prep_titanic(df):
 def prep_telco(telco_db):
     '''
     This function will be cleaning untransformed telco data into a clean a telco data
+    can use acquire.get_telco_db() to get fresh dataframe
     '''
     
     # dropping columns
