@@ -11,7 +11,7 @@ import prepare
 def prep_iris(iris_db):
     '''
     This function will be cleaning untransformed iris data into a clean iris data
-    can use acquire.get_iris_db() to get fresh dataframe
+    ** use acquire.get_iris_db() to get fresh dataframe**
     '''
     
     # dropping columns = species_id and measurement_id
@@ -44,10 +44,10 @@ def prep_telco(telco_db):
     '''
     
     # dropping columns
-    telco_db = telco_db.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id']) 
+    telco_db = telco_db.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id', 'customer_id', 'total_charges']) 
     
-    # checking for null value
-    telco_db.isnull().sum()
+    # # checking for null value
+    # telco_db.isnull().sum()
     
     # replacing all space character with 0.0
     telco_db = telco_db.replace(' ', '0.0')
@@ -57,6 +57,8 @@ def prep_telco(telco_db):
 def splitting_data(df, col):
     '''
     This function will split the dataframe and send in target variable
+    *** use dataframe and target variable TARGET VARIABLE: for iris is: species; titanic: survived; telco: churn
+                
     '''
 
     #first split
